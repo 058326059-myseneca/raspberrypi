@@ -1,4 +1,4 @@
-# Iot Solution ARM32 docker
+# Iot Solution ARM32 
 FROM python:3.9-slim
 
 # The service name for TML solution
@@ -282,7 +282,7 @@ RUN cp -rf raspberrypi/iotsolution-scripts-data/* IotSolution/
 RUN echo "PIP Install TML core packages"
 RUN pip install maadstml
 
-RUN cp -rf raspberrypi/tmux-shell-script/tmux-docker.sh tmux/tmux-docker.sh
+RUN cp -rf raspberrypi/tmux-shell-script/tmux-.sh tmux/tmux-.sh
 
 RUN cp -rf raspberrypi/iot-dashboard-html/viperviz.zip Viperviz/viperviz.zip
 RUN chmod -R +x IotSolution
@@ -296,4 +296,4 @@ WORKDIR /
 
 RUN rm -rf raspberrypi
 
-ENTRYPOINT ["/bin/bash","-c","while true; do sleep 1; done | ./tmux/tmux-docker.sh"]
+ENTRYPOINT ["/bin/bash","-c","while true; do sleep 1; done | ./tmux/tmux-.sh"]
